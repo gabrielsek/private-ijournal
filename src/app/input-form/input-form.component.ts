@@ -38,11 +38,11 @@ export class InputFormComponent {
       this.originalEvent = event;
       this.fileNotUploaded = false;
       this.imageBase64 = this.originalEvent.image;
-      this.initializeFormWithData(event);
+      this.fillEventFormWithEventData(event);
     })
   }
 
-  private initializeForm(): void {
+  private initializeEventForm(): void {
     this.inputForm = new FormGroup<any>({
       name: new FormControl<string | null>(null),
       startDate: new FormControl<Date | null>(null),
@@ -53,7 +53,7 @@ export class InputFormComponent {
     })
   }
 
-  private initializeFormWithData(event: Event): void {
+  private fillEventFormWithEventData(event: Event): void {
     this.inputForm = new FormGroup<any>({
       name: new FormControl<string | null>(event.name),
       startDate: new FormControl<Date | null>(event.startDate),
@@ -106,7 +106,7 @@ export class InputFormComponent {
   private disableEditMode(): void {
     this.isEditMode = false;
     this.imageBase64 = null;
-    this.initializeForm();
+    this.initializeEventForm();
   }
 
   onFileSelected($event): void {
