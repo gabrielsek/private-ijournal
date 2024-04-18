@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {TimelineComponent} from './timeline/timeline.component';
 import {TableComponent} from './table/table.component';
@@ -27,7 +26,6 @@ import {FieldsetModule} from "primeng/fieldset";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     MatTableModule,
     MatSortModule,
     MatIconModule,
@@ -42,4 +40,5 @@ import {FieldsetModule} from "primeng/fieldset";
   providers: [HttpClient],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
